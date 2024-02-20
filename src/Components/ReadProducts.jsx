@@ -44,6 +44,7 @@ const ReadProducts = () => {
             <div style={{border: "2px solid black", margin: "20px 0", padding: 20}} key={index}>
                 <img alt='imagen producto' src={p.url_img} style={{width: 500, height: 300}}></img>
                 <h3>name: {p.name}</h3>
+                <p>category: {p.category}</p>
                 <p>price: {p.price}</p>
                 <p>owner: {p.owner}</p>
                 <p>discount: {p.discount}</p>
