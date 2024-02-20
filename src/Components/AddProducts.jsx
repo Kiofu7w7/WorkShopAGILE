@@ -78,7 +78,7 @@ const AddProducts = () => {
         <h3>Categoria del producto</h3>
         <input
             placeholder="Verdura"
-            name="categoria"
+            name="category"
             value={formValue.category}
             onChange={handleInputChange}
         />
