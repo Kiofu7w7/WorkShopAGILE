@@ -31,8 +31,8 @@ const Test = () => {
     // SI SE QUIERE SUMAS COLOCAR NUMERO POSITIVO SI SE QUIERE RESTAR PONER EN NEGATIVO 2 O -2
     const obj = {
       idUser: user.currentUser.uid,
-      idProduct: 4,
-      amount: 2 
+      idProduct: 146,
+      amount: 6 
     }
     dispatch(actionAddCartItemAsyn(obj))
   }

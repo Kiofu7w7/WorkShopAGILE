@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { actionLogoutAsyn } from '../../Redux/Actions/actionsLogin';
 import NavBarB from '../../Components/NavBarB';
+import { actionListproductAsyn } from "../../Redux/Actions/actionProducts"
 
 const Home = () => {
 
   const dispatch = useDispatch();
   const navegar = useNavigate()
   const { products } = useSelector((store) => store.productsStore);
+
+  useEffect(() => {
+    dispatch(actionListproductAsyn());
+  }, []);
 
   const calculateAverageRating = (product) => {
     const ratings = product.ratings;
