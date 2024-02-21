@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import {facebook, google} from '../../Firebase/firebaseConfig'
 import { typesLogin } from "../Types/types";
+import { actionAddUserAsyn } from "./actionsUsers";
 
 // ------------Iniciando con Usuario y Contraseña---------------------//
 
@@ -47,6 +48,11 @@ export const actionGoogle = () => {
                 // The signed-in user info.
                 const user = result.user;
                 console.log(user);
+                const obj = {
+                    UID: user.uid,
+                    cart: [],
+                }
+                actionAddUserAsyn(obj)
             })
             .catch((error) => {
                 console.log(error);

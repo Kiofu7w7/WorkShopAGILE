@@ -10,3 +10,11 @@ export const typesProducts = {
     delete: "[products] delete",
     list: "[products] list",
 };
+
+export const typesUsers = {
+    add: "[users] add",
+    edit: "[users] edit",
+    delete: "[users] delete",
+    list: "[users] list",
+    addToCart: "[users] addToCart" 
+};

@@ -20,6 +20,7 @@ const NavBarB = () => {
                 {perfil ? <Button onClick={() => navegar("/profile")}>Profile</Button> : <Button onClick={() => navegar("/login")}>Login</Button>}
                 <Button variant="warning" onClick={() => navegar("/administrator")}>Administrador</Button>
                 <Button variant="danger" onClick={() => dispatch(actionLogoutAsyn())}>LogOut</Button>
+                <Button variant="danger" onClick={() => navegar("/test")}>Test</Button>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Text>
