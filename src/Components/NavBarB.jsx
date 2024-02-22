@@ -7,7 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { getAuth } from 'firebase/auth';
 import { actionLogoutAsyn } from '../Redux/Actions/actionsLogin';
 import { actionListUsertAsyn } from '../Redux/Actions/actionsUsers';
-import { Drawer, Space } from 'antd';
+import { Drawer } from 'antd';
 import CartItems from './CartItems';
 
 const NavBarB = () => {
@@ -64,7 +64,13 @@ const NavBarB = () => {
                     onClose={onClose}
                     open={open}
                 >
-                    {carrito?.cart ? <CartItems/> : 0}
+                    {carrito?.cart ? <CartItems/> :
+                        <div style={{height: "100%", display: "flex", flexDirection: 'column', justifyContent: "center", alignItems: "center"}}>
+                            <img style={{width: 250, height: 193}} alt='noItemsCart' src='https://res.cloudinary.com/dlwr6vxib/image/upload/v1708552829/Guajolota/Family_Values_Shopping_agomjw.png'></img>
+                            <h3>Tu canasta esta vacía</h3>
+                            <Button style={{backgroundColor: "#0AC763"}} >Agregar productos</Button>
+                        </div>
+                    }
                 </Drawer>
             </Container>
         </Navbar>
