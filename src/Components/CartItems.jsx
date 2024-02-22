@@ -59,12 +59,18 @@ const CartItems = () => {
 
 
     return (
-        <div>
-            {carrito?.cart.map((i, index) => (
-                <div key={index}>
-                    {buscar(i.idProduct, i.cantidad)}
-                </div>
-            ))}
+        <div style={{ display: "flex", flexDirection: "column", }}>
+            <div style={{ overflowY: "scroll", flex: 1 }}>
+                {carrito?.cart.map((i, index) => (
+                    <div key={index}>
+                        {buscar(i.idProduct, i.cantidad)}
+                    </div>
+                ))}
+            </div>
+            <div style={{ padding: "20px 0", position: "absolute", bottom: 0, width: "100%", display: "flex", justifyContent: "space-between", backgroundColor: "white" }}>
+                <Button>Vaciar canasta</Button>
+                <Button style={{marginRight: "45px"}}>Ir a pagar</Button>
+            </div>
         </div>
     )
 }

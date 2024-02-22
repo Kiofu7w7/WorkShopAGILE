@@ -52,6 +52,10 @@ const NavBarB = () => {
                 <Button variant="danger" onClick={() => navegar("/test")}>Test</Button>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
+                    <Navbar.Brand style={{display: "flex", alignItems: "center", gap: 10}}>
+                        <img style={{ width: 20, height: 20}} alt='logoUbicacion' src='https://res.cloudinary.com/dlwr6vxib/image/upload/v1702613340/reto1/icons/m2obn4yiyegfje2dvpmw.png'></img>
+                        {carrito?.address ? carrito?.address : "Sin dereccion asignada"}
+                    </Navbar.Brand>
                     <div onClick={showLargeDrawer} style={{ backgroundColor: "#2BBF6D", padding: "5px 20px", display: "flex", alignItems: "center", borderRadius: 10, gap: 6, cursor: "pointer"}}>
                         <img alt='cartLogo' style={{width: 30, height: 30}} src='https://res.cloudinary.com/dlwr6vxib/image/upload/v1705961405/Guajolota/Group_66_ughrn8.png'></img>
                         <p style={{ margin: 0, color: "white" }}>{carrito?.cart ? (carrito?.cart).length : 0}</p>
