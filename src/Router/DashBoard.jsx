@@ -5,6 +5,7 @@ import Home from '../Containers/Public/Home'
 import AdminPage from '../Containers/Private/Admin/AdminPage'
 import Test from "../Containers/test/Test"
 import Pasarela from '../Containers/Private/Pasarela'
+import Search from "../Components/Search"
 
 const DashBoard = () => {
 
@@ -17,6 +18,7 @@ const DashBoard = () => {
           <Route path='/administrator' element={<AdminPage />}></Route>
           <Route path='/pasarela' element={<Pasarela />}></Route>
           <Route path='/test' element={<Test />}></Route>
+          <Route path="/search" element={<Search />} />
           <Route path='/*'  element={<Navigate to="/home"/>}/>
         </Routes>
     </>

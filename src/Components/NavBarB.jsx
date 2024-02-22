@@ -49,7 +49,7 @@ const NavBarB = () => {
                 {perfil ? <Button onClick={() => navegar("/profile")}>Profile</Button> : <Button onClick={() => navegar("/login")}>Login</Button>}
                 <Button variant="warning" onClick={() => navegar("/administrator")}>Administrador</Button>
                 <Button variant="danger" onClick={() => dispatch(actionLogoutAsyn())}>LogOut</Button>
-                <Button variant="danger" onClick={() => navegar("/test")}>Test</Button>
+                <Button variant="danger" onClick={() => navegar("/search")}>Search</Button>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
                     <Navbar.Brand style={{display: "flex", alignItems: "center", gap: 10}}>

@@ -114,7 +114,6 @@ const Home = () => {
           <div style={{ display: "flex", gap: 30, flexWrap: "nowrap", overflowX: "auto", scrollBehavior: "smooth" }}>
             {products?.map((p, index) => {
               if (p.discount !== 0) { //FALTA ARREGLAR QUE SOLO RECIBA NUMEROS
-                console.log(p.discount)
                 return (
 
                   <div
@@ -135,7 +134,7 @@ const Home = () => {
                             </span>
                           )}
                         </Card.Title>
-                        <Card.Text>{p.description}</Card.Text>
+                        <Card.Text>{p.name}</Card.Text>
                         <Button style={{ backgroundColor: "#0AC763", border: "none" }}>Agregar</Button>
                       </Card.Body>
                     </Card>

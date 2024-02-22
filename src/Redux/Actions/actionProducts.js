@@ -99,3 +99,30 @@ export const actionDeleteProductSyn = (payload) => {
         payload,
     };
 };
+
+// ------------------Seacrh--------------------------
+export const actionSearchProductAsyn = (payload) => {
+    return async (dispatch) => {
+        const productosCollection = collection(dataBase, "Products");
+        const q = query(
+            productosCollection,
+            where("name", ">=", payload),
+            where("name", "<=", payload + '\uf8ff')
+        );
+
+        const dataQ = await getDocs(q);
+        console.log(dataQ);
+        const prod = [];
+        dataQ.forEach((docu) => {
+            prod.push(docu.data());
+        });
+        dispatch(actionSearchProductSyn(prod));
+    };
+};
+
+export const actionSearchProductSyn = (payload) => {
+    return {
+        type: typesProducts.search,
+        payload,
+    };
+};
