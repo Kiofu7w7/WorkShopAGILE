@@ -9,4 +9,13 @@ export const typesProducts = {
     edit: "[products] edit",
     delete: "[products] delete",
     list: "[products] list",
+    search: "[products] search",
+};
+
+export const typesUsers = {
+    add: "[users] add",
+    edit: "[users] edit",
+    delete: "[users] delete",
+    list: "[users] list",
+    addToCart: "[users] addToCart" 
 };

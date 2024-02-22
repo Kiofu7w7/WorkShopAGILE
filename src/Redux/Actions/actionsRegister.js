@@ -4,13 +4,19 @@ import {
     updateProfile,
 } from "firebase/auth";
 import { typesLogin } from "../Types/types";
+import { actionAddUserAsyn } from "./actionsUsers";
 
 export const actionRegisterAsync = (email, pass, name) => {
     return (dispatch) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, pass)
             .then(async ({ user }) => {
-                await updateProfile(auth.currentUser, { displayName: name, address: "calle 22#22-22" });
+                await updateProfile(auth.currentUser, { displayName: name });
+                const obj = {
+                    UID: user.uid,
+                    cart: [],
+                }
+                dispatch(actionAddUserAsyn(obj))
                 dispatch(actionRegisterSync(name, email, pass));
             })
             .catch((error) => {

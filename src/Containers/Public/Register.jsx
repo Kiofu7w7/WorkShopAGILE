@@ -20,12 +20,12 @@ const Register = () => {
         email: Yup.string().email("Invalid email").required("Required"),
         pass: Yup.string()
             .min(6, "pass muy corto")
-            .max(10, "Excede el máximo")
+            .max(30, "Excede el máximo")
             .oneOf([Yup.ref("pass2"), "Los password No coinciden"])
             .required("Required"),
         pass2: Yup.string()
             .min(6, "Pass muy corto")
-            .max(10, "Excede el máximo")
+            .max(30, "Excede el máximo")
             .oneOf([Yup.ref("pass"), "Los password No coinciden"])
             .required("Required"),
     });
