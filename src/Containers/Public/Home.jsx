@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { actionLogoutAsyn } from "../../Redux/Actions/actionsLogin";
@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Card from 'react-bootstrap/Card';
 import NavBarB from "../../Components/NavBarB";
+import { actionListproductAsyn } from "../../Redux/Actions/actionProducts";
 
 const Home = () => {
   const dispatch = useDispatch();
