@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    networks:
+      - jenkins-sonar2
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_data2:/var/jenkins_home
+  sonarqube:
+    image: sonarqube
+    networks:
+      - jenkins-sonar2
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube_data2:/opt/sonarqube/data
+      - sonarqube_extensions2:/opt/sonarqube/extensions
+      - sonarqube_logs2:/opt/sonarqube/logs
+
+networks:
+  jenkins-sonar2:
+
+volumes:
+  jenkins_data2:
+  sonarqube_data2:
+  sonarqube_extensions2:
+  sonarqube_logs2:
